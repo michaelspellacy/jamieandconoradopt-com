@@ -1,0 +1,89 @@
+<h1 id="careers.boilerplate-for-codekit-still-under-development---do-not-use">Careers.Boilerplate for CodeKit (Still Under Development - Do Not Use)</h1>
+<p>A starting point for TMP Worldwide career sites and applications for use with CodeKit.</p>
+<p><a href="careers.boilerplate.zip">Download Careers.Boilerplate for CodeKit</a></p>
+<p>While Careers.Boilerplate revolves around the usage of CodeKit, you may also use the default contents of the <code>web</code> directory to get your project off to a standardized and awesome start.</p>
+<p><strong>Note:</strong> CodeKit is only available for the Mac, but there are PC equivelents, such as Mixture, that we hope to be creating boilerplates for very soon.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ol style="list-style-type: decimal">
+<li><p>Unzip your download and copy contents of <code>careers-boilerplate-codekit</code> into a new project folder. You may even rename this folder if you wish. The standard naming convention for new web projects is &quot;careers-sitename-ext&quot; (all lowercase please).</p></li>
+<li><p>Fire up <a href="http://incident57.com/codekit/">CodeKit</a> and go to File &gt; Add Project and then navigate to the newly created project folder. Click &quot;Add&quot; once you have selected your project folder.</p></li>
+<li><p>Under the &quot;Projects&quot; pane in CodeKit, rename &quot;Careers.Boilerplate&quot; to the name of your new site project.</p></li>
+<li><p>Start coding!</p></li>
+</ol>
+<p><strong>Tip:</strong> Do yourself a favor and install <a href="https://www.dropbox.com/install">Dropbox</a> and then set up your project in the <a href="https://www.dropbox.com/help/16/en">public folder</a>. The benefits of working locally include better workflow, team collaboration and easier mobile testing. In addition to this, Dropbox has it's own version control built in! When you are finished coding locally, simply copy the project folder to the P4 directory and continue on from there.</p>
+<h2 id="project-directory">Project Directory</h2>
+<p>Your entire project lives under the main directory and includes the following directories and files.</p>
+<ul>
+<li><p>careers-boilerplate-codekit</p>
+<ul>
+<li>build - Unprocessed files</li>
+<li>codekit-config.json - Configuration file used by Codekit</li>
+<li>config.rb - Configuration file used by Compass</li>
+<li>license.md</li>
+<li>readme.md - The file you are hopefully reading now</li>
+<li>todo.md - File containing planned updates to project</li>
+<li>utils - Repository for useful scripts and documents (fee free to contribute)</li>
+<li>web - Your site/application files. All build files are output to this folder</li>
+</ul></li>
+</ul>
+<h2 id="build-directory">Build Directory</h2>
+<p>The <code>build</code> directory is for all preprocessed files. You will be doing the majority of your work in this folder. CodeKit listens for changes in this directory and then outputs updates to the <code>web</code> directory. We seperate our preprocessed files into a seperate directory so that we can easily integrate our completed development work into backend projects or hand-off processed files to vendors and clients without hassle. Here is a mapping of each directory:</p>
+<ul>
+<li>build/js &gt; web/js</li>
+<li>build/kits &gt; web</li>
+<li>build/sass &gt; web/css</li>
+</ul>
+<h3 id="javascript-directory">JavaScript Directory</h3>
+<p>The <code>build/js</code> directory contains all of your precompiled JavaScript functionality, libraries, and frameworks.</p>
+<h3 id="kits-directory">Kits Directory</h3>
+<p>The <code>build\kit</code> directory contains all template files needed at the start of each project. A <code>.kit</code> file is HTML with special comments. Kit adds two things to HTML: imports and variables. CodeKit compiles <code>.kit</code> files into regular HTML files.</p>
+<h4 id="common-pages">Common Pages</h4>
+<p>In the <code>kits</code> directory you will find precompiled files that you may need on any given careers centric project. Kit files allow us to template and modularize our work and also have the ability to accept variables. Content files are placed within this directoy while files such as headers, footers. and modules are placed within this folders <code>partials</code> directory. The processed versions of these files are <strong>not</strong> present at the start of a project. If you need these files, you can set up CodeKit to process them.</p>
+<h4 id="processed-files">Processed Files</h4>
+<ul>
+<li>403-forbidden.kit</li>
+<li>404-page-not-found.kit</li>
+<li>500-server-error.kit</li>
+<li>index.kit</li>
+<li>styleguide.kit</li>
+</ul>
+<h4 id="styleguide">Styleguide</h4>
+<p><a href="styleguide.html">styleguide.html</a> contains a list of common elements used on every website in the universe. As you style these elements throughout the course of the project, you instantly create a styleguide in the process that can be shared among collegues and clients. Feel free to add or remove elements as you see fit.</p>
+<h4 id="unprocessed-files">Unprocessed Files</h4>
+<ul>
+<li>about-us</li>
+<li>awards.kit</li>
+<li>career-areas.kit</li>
+<li>community-involvement.kit</li>
+<li>culture.kit</li>
+<li>day-in-the-life.kit</li>
+<li>diversity-inclusion.kit</li>
+<li>employee-profiles.kit</li>
+<li>green-initiatives.kit</li>
+<li>locations.kit</li>
+<li>media-library.kit</li>
+<li>news.kit</li>
+<li>working-here.kit</li>
+</ul>
+<p>To learn more about the kit langauge, head on over to <a href="http://incident57.com/codekit/kit.php">CodeKit's Kit Language</a> page.</p>
+<h3 id="sass-directory">SASS Directory</h3>
+<p>Overview of entire SASS directory.</p>
+<h4 id="regarding-sass">Regarding SASS</h4>
+<p>If you do not have CodeKit and only wish to leverage the power of <a href="http://sass-lang.com/">SASS</a>, simply point the command line to your newly created project folder and run &quot;Compass Watch&quot; as per usual. SASS files and partials are located in the <code>build/sass</code> and <code>build/sass/partials</code> directories. These files will be processed and output to the <code>web/css</code> directory.</p>
+<p><strong>Note:</strong> The New York development team has largely standardized on SASS. If you would like to see LESS included in this project, please contact Michael &quot;Spell&quot; Spellacy (michael.spellacy@tmp.com).</p>
+<h3 id="how-to-process-file">How to Process File</h3>
+<p>These are the instructions for processing files.</p>
+<h2 id="web-directory">Web Directory</h2>
+<p>Overview of entire web directory, with list of files, call out some files directly, etc.</p>
+<h2 id="utils-directory">Utils Directory</h2>
+<p>Overview of entire util directory, with list of files, call out some files directly, etc.</p>
+<h2 id="promoting-files">Promoting Files</h2>
+<p>The only directory that needs to be promoted to QA is the <code>web</code> directory.</p>
+<h2 id="useful-suggestions">Useful Suggestions</h2>
+<p>If you are looking to enhance and optimize your project even further, please be sure to check out <code>utils\docs</code>. These are taken from the HTML5 Boilerplate project and they rock.</p>
+<h2 id="contributors">Contributors</h2>
+<p>Stephanie Plumeri (stephanie.plumeri@tmp.com)</p>
+<p>Bobby KC (bobby.kc@tmp.com)</p>
+<p>Inspired by <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> and <a href="http://kickoff.thehivemedia.com/">Code Kickoff</a>.</p>
+<h2 id="contact">Contact</h2>
+<p>Michael &quot;Spell&quot; Spellacy (michael.spellacy@tmp.com)</p>

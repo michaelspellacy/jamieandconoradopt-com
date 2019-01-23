@@ -1,0 +1,21 @@
+# Humans Rule! 
+
+## This website is the result of the hard work of the following professionals:
+
+## Team
+
+Digital Project Management & Interactive Design: Larry Viezel (@larryv4711)
+
+Creative Design Brilliance: Dana Spomer (@misdanamarie)
+
+UI Development, Accessibility, and Responsive Wiz Kid: Michael "Spell" Spellacy (@spellacy)
+
+## Site Stuff
+
+* Language: English
+* Doctype: HTML5
+* CSS: 2.1 and 3 using Sass (http://sass-lang.com/)
+* JavaScript: 1.8.5
+* JavaScript Library: jQuery 1.9.1
+* Raleway and Lobster Two type provided by Google Fonts
+* Built with CodeKit using Sublime Text and UltraEdit

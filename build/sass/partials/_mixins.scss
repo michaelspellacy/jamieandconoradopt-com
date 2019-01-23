@@ -1,0 +1,264 @@
+// Global Mixins 
+
+// Fonts
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+
+	@font-face {
+	font-family: "#{$font-family}";
+	src: font-url("#{$font-filename}.eot");
+	src: font-url("#{$font-filename}.eot?#iefix") format("embedded-opentype"),
+	font-url("#{$font-filename}.woff") format("woff"),
+	font-url("#{$font-filename}.ttf") format("truetype"),
+	font-url("#{$font-filename}.svg##{$font-family}") format("svg");
+	font-weight: $font-weight;
+	font-style: $font-style;
+	font-stretch: $font-stretch;
+	
+	}
+
+}
+
+// Breakpoints
+
+@mixin breakpoint($point) {
+
+	@if $point == unicron {
+
+		@media (min-width: pem(1024)) {
+
+			@content; 
+
+		}
+
+	}
+
+	@if $point == vectorsigma {
+
+		@media (min-width: pem(940)) {
+
+			@content; 
+
+		}
+
+	}
+
+	@if $point == ultramagnus {
+
+		@media (min-width: pem(840)) {
+
+			@content; 
+
+		}
+
+	}
+
+	@else if $point == optimus {
+
+		@media (min-width: pem(768)) {
+
+			@content;
+
+		}
+
+	}
+
+	@else if $point == megatron {
+
+ 		@media (min-width: pem(580)) { 
+
+ 			@content; 
+
+ 		}
+
+	}
+
+	@else if $point == soundwave {
+
+ 		@media (min-width: pem(520)) { 
+
+ 			@content; 
+
+ 		}
+
+	}
+
+	@else if $point == cliffjumper {
+
+ 		@media (min-width: pem(480)) { 
+
+ 			@content; 
+
+ 		}
+
+	}
+
+	@else if $point == frenzy {
+
+ 		@media (min-width: pem(320)) { 
+
+ 			@content; 
+
+ 		}
+
+	}
+
+}
+
+@mixin clearfix {
+
+	&:after {
+	clear: both; 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	visibility: hidden;
+	}
+
+}
+
+// Used to accessibly hide elements (display: none may cause issues with screen readers)
+
+@mixin wai {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	text-indent: $text-offscreen;
+
+}
+
+@mixin killlistdefault {
+
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+}
+
+@mixin mounting-corners($border-width: 25px, $border-style: solid, $border-color: $primary-color, $border-position: -5px, $layer-number: 2) {
+	
+	// Photo: Mounting Corners (Top Left and Right)
+
+	&:before, &:after {
+	display: block;
+	position: absolute;
+	content: "\00A0";
+	width: 0; 
+	height: 0;
+	border-bottom: $border-width $border-style transparent;
+	z-index: $layer-number;
+	top: $border-position;
+	}
+
+	&:before {
+	left: $border-position;
+	border-left: $border-width $border-style $border-color;
+	}
+
+	&:after {
+	right: $border-position;
+	border-right: $border-width $border-style $border-color;
+	}
+
+	// Photo: Mounting Corners - Bottom Left and Right
+
+	figure {	
+
+		&:before, &:after {
+		display: block;
+		position: absolute;	
+		content: "\00A0";
+		width: 0; 
+		height: 0;
+		border-top: $border-width $border-style transparent;
+		z-index: $layer-number;
+		bottom: $border-position;
+		}
+
+		&:before {
+		left: $border-position;
+		border-left: $border-width $border-style $border-color;
+		}
+
+		&:after {
+		right: $border-position;
+		border-right: $border-width $border-style $border-color;
+		}
+
+
+	}
+
+	// Photo
+
+	img {
+	width: 100%;
+	height: auto;
+	@include box-shadow(0 0 3px 1px rgba(0, 0, 0, .3));
+	}
+
+	&.caption { 
+
+		&:focus, &:hover {
+
+			&:first-child {
+			
+				z-index: 3;
+			
+			}
+
+		}
+
+		figure {
+		background-color: $secondary-color;
+		}
+
+		figcaption {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: .3em;
+		background-color: rgba($secondary-color, .5);
+		font-family: "Raleway", sans-serif;
+		font-weight: 500;
+		font-size: px(12);
+		text-align: center;
+		vertical-align: bottom;
+		color: #fff;
+		text-shadow: 1px 1px 0px #000;
+
+			@include breakpoint(optimus) {
+
+				display: none;
+				background-color: transparent;
+				font-size: px(15);
+
+			}
+
+		}
+
+		&:focus, &:hover {
+
+			img {
+
+				@include breakpoint(optimus) {
+
+					opacity: .5;
+			
+				}
+
+			}
+
+			figcaption {
+				
+				display: block;
+				
+			}
+
+		}
+
+	}
+
+}
